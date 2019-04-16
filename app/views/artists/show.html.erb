@@ -1,2 +1,16 @@
-<h1>Artists#show</h1>
-<p>Find me in app/views/artists/show.html.erb</p>
+
+<div class="container mt-4">
+
+ <h2> Artist : <%= link_to @artist.name, artists_path(@artist) %> </h2>
+ 
+  <table class="table">
+   <% @artist.albums.each do |album|  %>
+   Album ID:<%= album.id %>
+   <tr>
+     <td> <%= image_tag album.cover, :style => "width:100px; height:100px" %></td>
+     <td> <%= album.year %></td>
+     <td><%= link_to album.name, artist_album_path(@artist,album) %></td>
+   </tr>  
+   <% end %>
+  </table>
+</div>

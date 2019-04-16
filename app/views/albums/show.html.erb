@@ -1,2 +1,31 @@
 <h1>Albums#show</h1>
 <p>Find me in app/views/albums/show.html.erb</p>
+
+<div class="container">
+    <div class="row">
+        <div class="col-2">
+        <%= image_tag @album.cover, :style => "width:150px; height:150px"  %>
+        </div>
+         <div class="col-9">
+         Album Name : <%= link_to @album.name, artist_path(@album.artist.id) %> <br/>
+        </div>
+    </div>
+
+</br>
+<table class="table">
+<% @album.songs.each do |song| %>
+    <tr>
+        <td>Song Name: <%= song.name %></td>
+        <td>
+            <audio controls
+                src="<%= song.url %>">
+                    Your browser does not support the
+                    <code>audio</code> element.
+            </audio>
+        </td>
+    </tr>
+ 
+ 
+<% end %>
+</table>
+</div>
