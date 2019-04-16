@@ -3,9 +3,9 @@
     <% @albums.each do |album| %>
       <div class="card">
         <%# <img class="card-img-top" src="..." alt="Card image cap"> %>
-        <%= image_tag album.cover, :class => "card-img-top" %>
+        <%= image_tag album.cover, class: "card-img-top" %>
         <div class="card-body">
-          <h5 class="card-title"><%= album.name %></h5>
+          <h5 class="card-title"><%= link_to album.name, album_path(album) %></h5>
         </div>
       </div>
     <% end %>
