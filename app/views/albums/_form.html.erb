@@ -1,0 +1,18 @@
+ <%= form_for @album do |f| %>
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name, required: true %>
+    </div>
+     <div class="field">
+      <%= f.label :cover %>
+      <%= f.url_field :cover %>
+    </div>
+     <div class="field">
+      <%= f.label :year %>
+      <%= f.number_field :year%>
+    </div>
+      <%= f.hidden_field :artist_id, :value => @artist.id %>
+    <%= f.submit "Add" %>
+  <% end %>
+
+
