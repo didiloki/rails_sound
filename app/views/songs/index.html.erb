@@ -3,16 +3,18 @@
     <thead>
       <th> Name</th>
       <th> Player</th>
+      <th> Album Cover</th>
       <th> Action</th>
     </thead>
     <% @songs.each do |song| %>
       <tr>
-        <td> <%= song.name %></td>
-        <td> <audio controls
+        <td><%= song.name %></td>
+        <td><audio controls
                 src="<%= song.url %>">
                     Your browser does not support the
                     <code>audio</code> element.
             </audio></td>
+        <td> <%= image_tag song.album.cover, style: "width:100px;height:100px;" %> </td>
         <td> <%= link_to "View Album", album_path(song.album) %> </td>
       </tr>
     <% end %>

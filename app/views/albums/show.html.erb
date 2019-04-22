@@ -4,8 +4,9 @@
         <%= image_tag @album.cover, :style => "width:150px; height:150px"  %>
         </div>
          <div class="col-9">
-            Album Name : <%= link_to @album.name, artist_path(@album.artist.id) %> <br/>
-            Album Artist : <%= link_to @album.artist.name, artist_path(@album.artist.id) %> <br/>
+            Album Name : <h3><%= @album.name %> </h3>
+            Album Artist : 
+            <h4><%= link_to @album.artist.name, artist_path(@album.artist.id) %> </h4>
         </div>
     </div>
 
