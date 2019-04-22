@@ -1,0 +1,22 @@
+
+<div class="container mt-4">
+
+ <h2> Artist : <%= link_to @artist.name, artist_path(@artist) %> </h2>
+ 
+  <table class="table">
+   <thead>
+      <th> Cover Image</th>
+      <th> Year</th>
+      <th> Name</th>
+    </thead>
+   <% @artist.albums.each do |album|  %>
+   <tr>
+     <td> <%= image_tag album.cover, style: "width:100px; height:100px" %></td>
+     <td> <%= album.year %></td>
+     <td><%= link_to album.name, artist_album_path(@artist,album) %></td>
+   </tr>  
+   <% end %>
+  </table>
+</div>
+
+<%= link_to 'Add Album', "/artists/#{@artist.id}/albums/new" %>
